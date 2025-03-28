@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bus extends Model
+class drivers extends Model
 {
     use HasFactory;
 
-    protected $fillable =[
-    'plate_number',
-    'capacity',
-    'status',
+    protected $fillable = [
+        'name',
+        'license_number',
+        'contact'
     ];
-    
-
-    
 }
