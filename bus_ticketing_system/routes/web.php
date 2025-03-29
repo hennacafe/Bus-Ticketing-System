@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\BusController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +43,9 @@ Route::get('/Bus', function () {
 Route::get('/Settings', function () {
     return view('Settings');
 });
+
+Route::get('/logout', function () {
+    return view('logout');
+});
+
+Route::resource('bus', BusController::class);

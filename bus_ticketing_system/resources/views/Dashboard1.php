@@ -16,15 +16,17 @@
                 <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/logo.svg" alt="">
             </a>
             <nav class="mt-6">
-                <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-200" href="#">Dashboard</a>
+                <a class="flex items-center px-4 py-2 mt-5 text-gray-700 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-200" href="#">Dashboard</a>
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/Bus-manage">Bus Manage</a>
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/Route-Manage">Route Manage</a>
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/Bus">Report</a>
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/Settings">Settings</a>
+                <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/">Logout</a>
             </nav>
         </aside>
 
         <!-- Main Content -->
+</form>
         <div class="flex-1 p-10 overflow-auto">
             <h1 class="text-2xl font-bold">Bus Ticketing Dashboard</h1>
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -20,6 +20,7 @@
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/Route-Manage">Route Manage</a>
                 <a id="reportTab" class="flex items-center px-4 py-2 mt-5 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-200" href="#">Reports</a>
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/Settings">Settings</a>
+                <a class="flex items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200" href="/">Logout</a>
             </nav>
         </aside>
 

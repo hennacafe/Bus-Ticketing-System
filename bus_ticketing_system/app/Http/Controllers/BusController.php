@@ -2,63 +2,73 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bus;
 use Illuminate\Http\Request;
 
 class BusController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $buses = Bus::all();
+        return view('bus.index', compact('buses'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('bus.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'plate_number' => 'required|unique:buses',
+            'bus_name' => 'required',
+            'capacity' => 'required|integer',
+            'type' => 'required',
+            'status' => 'required'
+        ]);
+
+        Bus::create($validated);
+
+        return redirect()->route('bus.index')->with('success', 'Bus created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        //
+        $bus = Bus::findOrFail($id);
+        return view('bus.show', compact('bus'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $bus = Bus::findOrFail($id);
+        return view('bus.edit', compact('bus'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $bus = Bus::findOrFail($id);
+
+        $validated = $request->validate([
+            'plate_number' => 'required|unique:buses,plate_number,' . $bus->id,
+            'bus_name' => 'required',
+            'capacity' => 'required|integer',
+            'type' => 'required',
+            'status' => 'required'
+        ]);
+
+        $bus->update($validated);
+
+        return redirect()->route('bus.index')->with('success', 'Bus updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $bus = Bus::findOrFail($id);
+        $bus->delete();
+
+        return redirect()->route('bus.index')->with('success', 'Bus deleted successfully.');
     }
 }
+
+

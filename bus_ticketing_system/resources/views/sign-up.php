@@ -98,7 +98,7 @@
         </div>
 
         <h2 class="dark:text-white">Create an Account</h2>
-        <form action="/signup" method="POST">
+        <form id="signupForm" onsubmit="handleSignUp(event)">
             <div>
                 <label for="name" class="block text-sm text-gray-500 dark:text-gray-300">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" required class="block w-full py-2.5 text-gray-700 placeholder-gray-400/70 bg-white border border-gray-200 rounded-lg mt-2 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
@@ -148,6 +148,28 @@
             document.documentElement.classList.add('dark');
         } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.classList.add('dark');
+        }
+
+        function handleSignUp(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll just store in localStorage and redirect
+            const userData = {
+                name: name,
+                email: email,
+                password: password // Note: In a real app, never store passwords in localStorage
+            };
+            
+            localStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Redirect to a new page (change 'dashboard.html' to your desired destination)
+            window.location.href = '/';
         }
     </script>
 </body>
